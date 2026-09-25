@@ -1,24 +1,20 @@
-|               |
-|---------------|
-| AI MCP Client |
+# AI MCP Client
 
-Package name  
-madj2k/ai-mcp
+**Package name:** `madj2k/ai-mcp`
 
-Namespace  
-Madj2kAiMcp
+**Namespace:** `Madj2k\AiMcp`
 
-License  
-GPL-2.0-or-later
+**License:** GPL-2.0-or-later
 
-`madj2k/ai-mcp` provides a framework-independent MCP client for Madj2k
-AI integrations. It implements the MCP protocol boundary and maps MCP
-capabilities to provider-neutral AI Core tool contracts.
+`madj2k/ai-mcp` provides a framework-independent MCP client for Madj2k AI integrations. It
+implements the MCP protocol boundary and maps MCP capabilities to provider-neutral AI Core tool
+contracts.
 
-<div class="toctree" data-maxdepth="2">
+## Documentation
 
-GettingStarted/Installation Concepts/Client Concepts/Authentication
-Integration/AiCoreIntegration Operations/TestServer
-Reference/ScopeAndLimitations
-
-</div>
+- [Installation](GettingStarted/Installation.md)
+- [MCP Client](Concepts/Client.md)
+- [Authentication](Concepts/Authentication.md)
+- [AI Core Integration](Integration/AiCoreIntegration.md)
+- [DDEV Test Server](Operations/TestServer.md)
+- [Scope and Limitations](Reference/ScopeAndLimitations.md)
