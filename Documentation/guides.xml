@@ -3,21 +3,18 @@
     xmlns="https://www.phpdoc.org/guides"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="https://www.phpdoc.org/guides vendor/phpdocumentor/guides-cli/resources/schema/guides.xsd"
+    input="docs"
+    output="output"
     input-format="rst"
-    index-name="Index"
-    automatic-menu="false"
-    max-menu-depth="3"
-    default-code-language="php"
+    output-format="html"
+    theme="bootstrap"
     links-are-relative="true"
-    theme="typo3docs"
+    show-progress="true"
+    fail-on-log="false"
+    log-path="php://stderr"
 >
     <project title="Madj2k AI MCP" />
-    <extension class="\phpDocumentor\Guides\RestructuredText\DependencyInjection\ReStructuredTextExtension" />
-    <extension class="\phpDocumentor\Guides\Bootstrap\DependencyInjection\BootstrapExtension" />
-    <extension class="\phpDocumentor\Guides\RstTheme\DependencyInjection\RstThemeExtension" />
-    <extension class="\phpDocumentor\Guides\Graphs\DependencyInjection\GraphsExtension" />
-    <extension class="\phpDocumentor\Guides\Markdown\DependencyInjection\MarkdownExtension" />
-    <extension class="\T3Docs\Typo3DocsTheme\DependencyInjection\Typo3DocsThemeExtension" />
-    <extension class="\T3Docs\GuidesExtension\DependencyInjection\Typo3GuidesExtension" />
-    <extension class="\T3Docs\GuidesPhpDomain\DependencyInjection\GuidesPhpDomainExtension" />
+    <extension class="phpDocumentor\Guides\Bootstrap" />
+    <extension class="phpDocumentor\Guides\Code" />
+    <extension class="phpDocumentor\Guides\Graphs" />
 </guides>

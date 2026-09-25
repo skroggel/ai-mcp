@@ -20,9 +20,9 @@ contracts.
 ..  toctree::
     :maxdepth: 2
 
-    Installation
-    Client
-    Authentication
-    AiCoreIntegration
-    TestServer
-    ScopeAndLimitations
+    GettingStarted/Installation
+    Concepts/Client
+    Concepts/Authentication
+    Integration/AiCoreIntegration
+    Operations/TestServer
+    Reference/ScopeAndLimitations

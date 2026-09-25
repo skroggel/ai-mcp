@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MCP client</title>
+
+</head>
+<body>
+<!-- content start -->
+    <div class="section" id="mcp-client">
+            <a id="ai-mcp-client"></a>
+            <h1>MCP client</h1>
+            
+    <p>The <code>StreamableHttpMcpClient</code> implements the HTTP MCP boundary. It supports:</p>
+
+            
+
+<ul>
+    <li>MCP initialization and capability negotiation;</li>
+    <li>JSON-RPC responses;</li>
+    <li>SSE-wrapped JSON-RPC responses;</li>
+    <li>session identifiers and protocol-version headers;</li>
+    <li>paginated <code>tools/list</code> and <code>resources/list</code>;</li>
+    <li><code>tools/call</code> and <code>resources/read</code>;</li>
+    <li>normalized tool, resource and result DTOs.</li>
+</ul>
+
+            
+    <p>Basic usage:</p>
+
+            <pre><code class="language-php">use GuzzleHttp\Client;
+use Madj2k\AiMcp\Client\StreamableHttpMcpClient;
+
+$client = new StreamableHttpMcpClient(
+    httpClient: new Client([&#039;timeout&#039; =&gt; 10]),
+    endpoint: &#039;https://mcp.example.test/mcp&#039;,
+);
+
+$client-&gt;initialize();
+$tools = $client-&gt;listTools();
+$result = $client-&gt;callTool(&#039;list_records&#039;, [&#039;limit&#039; =&gt; 10]);</code></pre>
+
+            
+    <p>The client does not decide which tool a model should call. It only performs MCP communication.
+That decision belongs to the AI Core tool loop or another host application.</p>
+
+    </div>
+<!-- content end -->
+</body>
+</html>

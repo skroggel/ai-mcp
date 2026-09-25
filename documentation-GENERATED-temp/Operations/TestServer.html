@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DDEV test server</title>
+
+</head>
+<body>
+<!-- content start -->
+    <div class="section" id="ddev-test-server">
+            <a id="ai-mcp-test-server"></a>
+            <h1>DDEV test server</h1>
+            
+    <p>The <code>test-server</code> directory contains a read-only mini-shop MCP server for local integration
+tests. It exposes:</p>
+
+            
+
+<ul>
+    <li>customers;</li>
+    <li>products;</li>
+    <li>orders;</li>
+    <li>order items.</li>
+</ul>
+
+            
+    <p>Available tools are:</p>
+
+            
+
+<ul>
+    <li><code>list_entities</code>;</li>
+    <li><code>describe_entity</code>;</li>
+    <li><code>find_records</code>;</li>
+    <li><code>order_totals_by_country</code>.</li>
+</ul>
+
+            
+    <p>The server also exposes the <code>shop://schema</code> resource. It intentionally does not expose arbitrary
+SQL execution.</p>
+
+            
+    <p>The service is configured by the root project&#039;s <code>.ddev/docker-compose.mcp.yaml</code>:</p>
+
+            <pre><code class="language-bash">ddev start
+ddev exec curl http://mcp-server:8080/health</code></pre>
+
+            
+    <p>The MCP endpoint is <code>http://mcp-server:8080/mcp</code> from the DDEV network.</p>
+
+    </div>
+<!-- content end -->
+</body>
+</html>
