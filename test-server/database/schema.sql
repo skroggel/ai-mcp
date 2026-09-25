@@ -1,0 +1,35 @@
+CREATE TABLE IF NOT EXISTS customers (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(120) NOT NULL,
+    email VARCHAR(190) NOT NULL,
+    country CHAR(2) NOT NULL,
+    created_at DATETIME NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS products (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    sku VARCHAR(40) NOT NULL UNIQUE,
+    name VARCHAR(120) NOT NULL,
+    category VARCHAR(80) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    active TINYINT(1) NOT NULL DEFAULT 1
+);
+
+CREATE TABLE IF NOT EXISTS orders (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT UNSIGNED NOT NULL,
+    status VARCHAR(30) NOT NULL,
+    ordered_at DATETIME NOT NULL,
+    total_amount DECIMAL(10, 2) NOT NULL,
+    CONSTRAINT fk_orders_customer FOREIGN KEY (customer_id) REFERENCES customers (id)
+);
+
+CREATE TABLE IF NOT EXISTS order_items (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    order_id INT UNSIGNED NOT NULL,
+    product_id INT UNSIGNED NOT NULL,
+    quantity INT UNSIGNED NOT NULL,
+    unit_price DECIMAL(10, 2) NOT NULL,
+    CONSTRAINT fk_order_items_order FOREIGN KEY (order_id) REFERENCES orders (id),
+    CONSTRAINT fk_order_items_product FOREIGN KEY (product_id) REFERENCES products (id)
+);
